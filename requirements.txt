@@ -248,3 +248,4 @@ zipp==3.6.0
 zope.interface==5.4.0
 selenium==4.1.0
 webdriver_manager==3.5.2
+schedule==1.1.0
