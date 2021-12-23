@@ -1,2 +1,2 @@
-# Bullish_Detection
-#-TBD: Project Documentation!
+## Bullish_Detection
+# -TBD: Project Documentation!
