@@ -1,17 +1,5 @@
 '''
-Pipeline
-class Pipeline:
-    -extract_data
-    -clean data
-    -get required params
-
-class DB:
-    -connect to db
-    -load data to db
-    
-
-#############
-Tests
+Author : Nicholas Koech
 '''
 import pandas as pd
 import requests,pytz # $ pip install pytz
@@ -19,6 +7,7 @@ from datetime import datetime
 
 class Pipeline:
 
+    '''method to extract data in a dataframe format'''
     def extract_data(self , url):
 
         try:
@@ -30,10 +19,11 @@ class Pipeline:
 
         return df_extract
 
-    def clean_data (self , df):
+    '''df argument in method below is dataframe returned from extract_data method'''
+    def clean_data (self,df):
 
         #drop unrequired columns
-        df=df.drop(columns=['Last 7 Days', 'Unnamed: 10','Unnamed: 0','7d','30d']) 
+        df.drop(columns=['Last 7 Days', 'Unnamed: 10','Unnamed: 0','7d','30d']) 
 
         #Remove dollar signs
         df['Price']=df['Price'].str.replace('$','',regex=True)
@@ -70,7 +60,9 @@ class Pipeline:
         #Include time column utc/Los_Angeles tz
         df['date_time']=datetime.now(pytz.timezone("America/Los_Angeles"))
 
+        return df
 
+    '''method to get the columns we need for further processing.Argument is cleaned dataframe'''
     def get_meaningful_data(self,df):
 
         pass
