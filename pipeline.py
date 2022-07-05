@@ -67,9 +67,3 @@ class Pipeline:
 
         pass
 
-class TestCases:
-    pass
-
-
-if __name__ == '__main__':
-    pass
